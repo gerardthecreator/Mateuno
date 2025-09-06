@@ -1,0 +1,10 @@
+/*
+  Archivo reservado para los estilos específicos del plano cartesiano.
+  Por ejemplo, si agregamos tooltips (ventanas emergentes) que muestren
+  coordenadas al pasar el ratón, sus estilos irían aquí.
+*/
+
+.canvas-section {
+    /* Podríamos añadir un gradiente de fondo o algo más complejo aquí en el futuro */
+    position: relative; /* Necesario para posicionar elementos hijos de forma absoluta */
+}

@@ -1,0 +1,22 @@
+/* Media Query para pantallas pequeñas (móviles) */
+@media (max-width: 480px) {
+    .container {
+        flex-direction: column; /* Apila la sidebar y el contenido */
+        margin: 10px;
+        gap: 10px;
+    }
+
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    .sidebar, .content {
+        padding: 15px;
+    }
+
+    /* Hacemos que el canvas sea responsive */
+    #plano-cartesiano {
+        width: 100%;
+        height: auto;
+    }
+}

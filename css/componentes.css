@@ -1,0 +1,153 @@
+/* === BOTÓN DE MENÚ === */
+.menu-toggle-btn {
+    background: none;
+    border: 2px solid var(--color-texto-secundario);
+    color: var(--color-texto-secundario);
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 5px 12px;
+    margin-right: 20px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.menu-toggle-btn:hover {
+    background-color: var(--color-acento);
+    border-color: var(--color-acento);
+    color: var(--color-texto);
+}
+
+/* === LISTA DE EJERCICIOS === */
+#lista-ejercicios {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#lista-ejercicios button {
+    display: block;
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 8px;
+    background-color: var(--color-secundario);
+    color: var(--color-texto);
+    border: 2px solid transparent;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: var(--fuente-cuerpo);
+    font-size: 1.1rem;
+    text-align: left;
+    transition: all 0.3s ease;
+    white-space: nowrap; /* Evita que el texto se rompa al cerrar la sidebar */
+}
+
+#lista-ejercicios button:hover {
+    background-color: var(--color-acento);
+    border-color: var(--color-texto);
+    transform: translateX(5px);
+}
+
+#lista-ejercicios button.active {
+    background-color: var(--color-acento);
+    font-weight: bold;
+    color: var(--color-texto);
+    box-shadow: 0 0 10px rgba(231, 76, 60, 0.5);
+}
+
+.loading-placeholder {
+    padding: 12px;
+    color: var(--color-texto-secundario);
+    text-align: center;
+    font-style: italic;
+}
+
+/* === PASOS DE LA SOLUCIÓN === */
+.paso {
+    background-color: var(--color-secundario);
+    border-left: 5px solid var(--color-acento);
+    padding: 15px 20px;
+    margin-bottom: 15px;
+    border-radius: 0 8px 8px 0;
+}
+
+.paso-numero {
+    font-family: var(--fuente-titulos);
+    font-size: 1.5rem;
+    color: var(--color-acento);
+    margin: 0 0 10px 0;
+}
+
+.paso-explicacion {
+    margin: 5px 0 15px 0;
+    color: var(--color-texto-secundario);
+    font-size: 1.1rem;
+}
+
+.paso-formula-container {
+    background-color: var(--color-fondo);
+    padding: 15px;
+    border-radius: 5px;
+    overflow-x: auto; /* Permite scroll horizontal si la fórmula es muy larga */
+}
+
+/* === ESTILOS PARA PALABRAS CLAVE DE APRENDIZAJE === */
+.keyword-action {
+    color: #3498db; /* Azul para acciones */
+    font-weight: bold;
+}
+.keyword-concept {
+    color: #f1c40f; /* Amarillo para conceptos */
+    font-weight: bold;
+}
+.keyword-rule {
+    color: #e74c3c; /* Rojo/Naranja para reglas importantes */
+    font-weight: bold;
+}
+
+/* === ESTILOS PARA KaTeX (FÓRMULAS MATEMÁTICAS) === */
+/* Asegura que el texto de las fórmulas sea blanco para que contraste con el fondo oscuro. */
+.katex {
+    font-size: 1.3rem; /* Aumenta el tamaño de la fuente de las fórmulas */
+    color: var(--color-texto);
+}
+
+/* === CONTENEDOR DE LA SOLUCIÓN FINAL === */
+.solucion-final {
+    background-color: #1e2b38;
+    border: 2px solid #2ecc71; /* Borde verde para la solución */
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(46, 204, 113, 0.3);
+}
+
+.solucion-final-titulo {
+    font-family: var(--fuente-titulos);
+    margin: 0 0 10px 0;
+    color: var(--color-texto-secundario);
+    font-size: 1.2rem;
+}
+
+.solucion-final-formula {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #2ecc71; /* Verde para la respuesta final */
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* === ESTADOS DE CARGA Y ADVERTENCIAS === */
+#estado-carga {
+    text-align: center;
+    padding: 40px;
+    font-size: 1.2rem;
+    color: var(--color-acento);
+}
+
+.no-script-warning {
+    background-color: var(--color-acento);
+    color: var(--color-texto);
+    text-align: center;
+    padding: 20px;
+    font-family: var(--fuente-cuerpo);
+}

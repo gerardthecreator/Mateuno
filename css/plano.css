@@ -1,0 +1,14 @@
+.plano-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+#plano-cartesiano {
+    background-color: #ffffff;
+    border-radius: 5px;
+}
