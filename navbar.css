@@ -1,0 +1,71 @@
+/* -------------------
+   Estilos para la Barra de Navegación (Navbar)
+   ------------------- */
+.navbar {
+    background-color: var(--primary-color); /* Fondo azul principal */
+    color: #fff;
+    padding: 15px 20px;
+    position: fixed; /* Hace que la navbar se quede fija en la parte superior */
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Asegura que la navbar esté por encima de otros elementos */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Sombra sutil para darle profundidad */
+}
+
+.nav-container {
+    max-width: var(--max-width-content);
+    margin: 0 auto;
+    display: flex; /* Utiliza flexbox para alinear elementos */
+    justify-content: space-between; /* Espacia el logo y los enlaces */
+    align-items: center; /* Centra verticalmente los elementos */
+}
+
+.logo {
+    font-family: var(--font-anton);
+    font-size: 2rem;
+    color: #fff;
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+.logo:hover {
+    color: var(--secondary-color); /* Cambia de color al pasar el ratón */
+}
+
+.nav-links {
+    list-style: none; /* Elimina los puntos de la lista */
+    display: flex; /* Alinea los enlaces horizontalmente */
+    gap: 30px; /* Espacio entre cada enlace */
+}
+
+.nav-links li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 400; /* Un poco más grueso que el texto normal */
+    padding: 5px 0;
+    position: relative; /* Para el efecto de subrayado animado */
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: var(--secondary-color);
+}
+
+/* Efecto de subrayado animado en los enlaces de navegación */
+.nav-links li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: var(--secondary-color);
+    bottom: 0;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+.nav-links li a:hover::after {
+    width: 100%;
+}

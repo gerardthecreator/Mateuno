@@ -1,0 +1,55 @@
+/* Variables de color para fácil mantenimiento */
+:root {
+    --color-primario: #34495e;
+    --color-secundario: #2c3e50;
+    --color-acento: #e74c3c;
+    --color-texto: #ecf0f1;
+    --fuente-titulos: 'Anton', sans-serif;
+    --fuente-cuerpo: 'Oswald', sans-serif;
+}
+
+body {
+    font-family: var(--fuente-cuerpo);
+    background-color: var(--color-secundario);
+    color: var(--color-texto);
+    margin: 0;
+    line-height: 1.6;
+}
+
+.container {
+    display: flex;
+    max-width: 1200px;
+    margin: 20px auto;
+    gap: 20px;
+}
+
+header, footer {
+    background-color: var(--color-primario);
+    text-align: center;
+    padding: 1rem;
+    font-family: var(--fuente-titulos);
+}
+
+.sidebar {
+    flex: 1; /* Ocupa 1 parte del espacio */
+    background-color: var(--color-primario);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.content {
+    flex: 3; /* Ocupa 3 partes del espacio, es más grande */
+    background-color: var(--color-primario);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+h1, h2, h3 {
+    font-family: var(--fuente-titulos);
+    color: var(--color-acento);
+    letter-spacing: 1px;
+}
+
+.hidden {
+    display: none;
+}

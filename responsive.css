@@ -1,0 +1,27 @@
+/* Estas reglas solo se activan en pantallas con un ancho máximo de 480px */
+@media (max-width: 480px) {
+
+    body {
+        font-size: 14px; /* Hacemos la letra un poco más pequeña para que quepa mejor */
+    }
+    
+    header h1 {
+        font-size: 1.8rem; /* Reducimos el tamaño del título principal */
+        padding: 1rem;
+    }
+
+    main {
+        /* La magia de la responsividad está aquí: */
+        flex-direction: column; /* Cambiamos la dirección del flexbox a vertical */
+        align-items: center; /* Centramos los elementos en el nuevo eje */
+        gap: 1.5rem;
+    }
+
+    #explicacion-container, #canvas-container {
+        width: 90%; /* Hacemos que las tarjetas ocupen casi todo el ancho disponible */
+    }
+
+    #explicacion-container {
+        padding: 1.5rem; /* Reducimos un poco el padding interno */
+    }
+}

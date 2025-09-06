@@ -1,0 +1,22 @@
+/* 1. DEFINICIÓN DE LA ANIMACIÓN (KEYFRAMES) */
+@keyframes fadeIn {
+    /* El punto de partida de la animación */
+    from {
+        opacity: 0;
+        transform: translateY(20px); /* Empieza un poco más abajo */
+    }
+
+    /* El punto final de la animación */
+    to {
+        opacity: 1;
+        transform: translateY(0); /* Termina en su posición original */
+    }
+}
+
+/* 2. CLASE PARA APLICAR LA ANIMACIÓN */
+.fade-in-element {
+    animation-name: fadeIn;
+    animation-duration: 0.8s; /* ¿Cuánto dura la animación? */
+    animation-timing-function: ease-out; /* Empieza rápido y termina lento */
+    animation-fill-mode: backwards; /* Asegura que el estado inicial (invisible) se aplique antes de que empiece */
+}

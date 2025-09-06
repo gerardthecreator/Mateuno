@@ -1,0 +1,26 @@
+/* -------------------
+   Estilos para el Plano Cartesiano (Canvas)
+   ------------------- */
+.canvas-container {
+    width: 100%;
+    max-width: 800px; /* Limita el ancho máximo del contenedor del canvas */
+    margin: 40px auto; /* Centra el contenedor y añade margen */
+    border: 2px solid var(--primary-color); /* Borde alrededor del plano */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Sombra para darle profundidad */
+    border-radius: 8px; /* Bordes ligeramente redondeados */
+    overflow: hidden; /* Asegura que el contenido del canvas no se desborde */
+    background-color: #fff; /* Fondo blanco para el canvas */
+}
+
+#planoCartesiano {
+    display: block; /* Elimina el espacio extra que los navegadores añaden a los canvas */
+    width: 100%; /* El canvas ocupará todo el ancho de su contenedor */
+    height: 600px; /* Altura fija para el canvas, puedes ajustarla */
+    /* El ancho y alto real del canvas se establecerán en JS para mantener la relación de aspecto y resolución */
+}
+
+#graph-controls {
+    text-align: center;
+    margin-top: 20px;
+    /* Estilos para futuros controles de gráfica (zoom, pan, etc.) */
+}

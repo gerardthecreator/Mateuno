@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Una aplicación web interactiva para aprender a resolver inecuaciones paso a paso con representaciones gráficas detalladas.">
+    <title>Solucionador de Inecuaciones con MathJax</title>
+
+    <!-- Estilos -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/componentes.css">
+    <link rel="stylesheet" href="css/plano.css">
+    <link rel="stylesheet" href="css/curvas.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+</head>
+<body>
+    <noscript>
+        <div class="no-script-warning"><h1>JavaScript es necesario</h1><p>Esta aplicación requiere JavaScript para funcionar.</p></div>
+    </noscript>
+    <header>
+        <button id="menu-toggle" class="menu-toggle-btn" aria-label="Mostrar u ocultar lista de ejercicios" aria-expanded="false" aria-controls="sidebar-nav">☰</button>
+        <h1>Soluciones de Inecuaciones Paso a Paso</h1>
+    </header>
+    <main class="container">
+        <aside id="sidebar-nav" class="sidebar sidebar-closed">
+            <nav aria-label="Lista de ejercicios">
+                <h2>Ejercicios</h2>
+                <ul id="lista-ejercicios"><li class="loading-placeholder">Cargando lista...</li></ul>
+            </nav>
+        </aside>
+        <section class="content" id="main-content" aria-live="polite">
+            <div id="mensaje-bienvenida">
+                <h2>Bienvenido al Solucionador Interactivo</h2>
+                <p>Usa el botón ☰ en la esquina superior izquierda para desplegar la lista de ejercicios y comenzar.</p>
+            </div>
+            <div id="area-solucion" class="hidden">
+                <h2 id="titulo-ejercicio"></h2>
+                <div id="estado-carga" class="hidden"><p>Cargando solución...</p></div>
+                <div id="pasos-solucion"></div>
+                <h3>Representación Gráfica</h3>
+                <div class="plano-container">
+                    <canvas id="plano-cartesiano" width="500" height="500" role="img" aria-label="Plano cartesiano">
+                        Tu navegador no soporta el elemento canvas.
+                    </canvas>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>Generador de Soluciones de Inecuaciones</p>
+    </footer>
+
+    <!-- ===================================================================== -->
+    <!-- SECCIÓN DE SCRIPTS - ORDEN DE CARGA CONTROLADO Y DEFINITIVO -->
+    <!-- ===================================================================== -->
+
+    <!-- 1. Configuración de MathJax. Se ejecuta inmediatamente. -->
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']]
+            },
+            options: {
+                ignore: ['.plano-container'] // Ignora el contenedor del canvas para evitar conflictos.
+            },
+            startup: {
+                ready: () => {
+                    console.log('MathJax Core está listo.');
+                    MathJax.startup.defaultReady();
+                }
+            }
+        };
+    </script>
+
+    <!-- 2. Carga del script de MathJax (SIN async/defer). -->
+    <script id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <!-- 3. Nuestros scripts (se ejecutan después de que MathJax se haya cargado). -->
+    <script src="js/config.js"></script>
+    <script src="js/plano.js"></script>
+    <script src="js/componentes.js"></script>
+    <script src="js/list.js"></script>
+    <script src="js/control.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+</html>
